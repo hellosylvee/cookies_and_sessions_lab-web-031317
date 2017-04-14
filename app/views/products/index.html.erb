@@ -1,0 +1,17 @@
+<h1>Welcome to Sylvee Store!</h1>
+<h3>Enter a product name to be added into your cart.</h3>
+
+<%= form_tag products_path, method: "post" do %>
+  <div class="field">
+    <%= label_tag "product", "Product Name" %>
+    <%= text_field_tag "product" %>
+  </div><br>
+  <%= submit_tag "add to cart" %>
+<% end %>
+
+<h3>Current cart:</h3>
+<ul>
+  <% @cart.each do |product| %>
+    <li><%= product %></li>
+  <% end %>
+</ul>
